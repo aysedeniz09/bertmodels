@@ -10,9 +10,9 @@ dfmain = pd.read_csv (r'/home/adl6244/NewswhipRU/spike_train.csv', encoding = "I
 list_of_urls = dfmain['link'].tolist()
 
 rows = []
-for url in list_of_urls:
+for link in list_of_urls:
     try:
-        r = requests.get(url)
+        r = requests.get(link)
         soup = BeautifulSoup(r.content, "html.parser")
         text = soup.find_all(text=True)
         
@@ -31,14 +31,14 @@ for url in list_of_urls:
         for t in text:
             if t.parent.name not in blacklist:
                 output += '{} '.format(t)
-        row = {'url':url,
+        row = {'link':link,
                'soup':soup,
                'text':text,
               'output':output}
         
         rows.append(row)
     except Exception as e:
-        row = {'url':url,
+        row = {'link':link,
         'soup':'N/A',
         'text':'N/A',
         'output':'N/A'}
@@ -47,5 +47,6 @@ for url in list_of_urls:
         
 df = pd.DataFrame(rows)
      
-df = pd.DataFrame(rows)
-df.to_csv('spike_train_bs.csv')
+dfmaster = dfmain.merge(df, left_on='link', right_on='link')
+
+dfmaster.to_csv('bert_train_scraped.csv')
