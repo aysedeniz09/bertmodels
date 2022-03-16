@@ -6,7 +6,7 @@ from pprint import pprint
 import pandas as pd
 import csv
 
-dfmain = pd.read_csv (r'/home/adl6244/NewswhipRU/spike_train.csv', encoding = "ISO-8859-1", engine='python')
+dfmain = pd.read_csv (r'spike_train.csv', encoding = "ISO-8859-1", engine='python')
 list_of_urls = dfmain['link'].tolist()
 
 rows = []
