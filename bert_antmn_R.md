@@ -12,8 +12,9 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
-### This code runs ANTMN on BERTopic in R Studio 
-The method is from the [supplemental code](https://github.com/DrorWalt/ANTMN), citation: Walter, D., & Ophir, Y. (2019). News Frame Analysis: An Inductive Mixed-Method Computational Approach. Communication Methods and Measures. <https://doi.org/10.1080/19312458.2019.1639145>.
+### This code runs ANTMN on BERTopic in R Studio following the BERTopic Model [Code](https://github.com/aysedeniz09/bertmodels/blob/main/Bert_Antmn_Github.ipynb)
+
+## The method is from the [supplemental code](https://github.com/DrorWalt/ANTMN), citation: Walter, D., & Ophir, Y. (2019). News Frame Analysis: An Inductive Mixed-Method Computational Approach. Communication Methods and Measures. <https://doi.org/10.1080/19312458.2019.1639145>.
 1. Load the packages
 ```{r}
 library(dplyr)
